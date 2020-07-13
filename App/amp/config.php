@@ -1,0 +1,9 @@
+<?php $config = array(
+    "database_type"=>"mysql",
+    "database_name"=>"ampdb",
+    "server"=>"172.18.0.4",
+    "username"=>"root",
+    "password"=>"ampsql123",
+    "charset"=>"utf8",
+    "port"=>3306,
+    "encryption_key"=>"e63ab8bc9d446ea6be0f75261528a8ea7f8aa3be97c2436d3abb53931211701c" ); ?>

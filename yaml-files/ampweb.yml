@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: amp-web-svc
+  labels:
+    app: asset
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: asset
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: amp-web-deploy
+ labels:
+    app: asset
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: asset
+  template:
+    metadata:
+      labels:
+        app: asset
+    spec:
+      containers:
+      - image: deepakkumarc/amp-web:2.0
+        name: amp-web
+        ports:
+        - containerPort: 80
